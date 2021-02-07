@@ -12,15 +12,15 @@ public class Driver {
 		String repo = sc.nextLine();
 		System.out.println("Press [1] for local repo [2] for remote repo");
 		i = sc.nextInt();
-		System.out.println(repo);
-		System.out.println(i);
-		//		if(i==1) {
-		//			l.create(/*file name from batch file*/);
-		//		}else if(i==2) {
-		//			r.create(/*file name from batch file*/);
-		//		}else {
-		//			System.out.println("Select correct choice ;__;");
-		//		}
+		//		System.out.println(repo);
+		//		System.out.println(i);
+		if(i==1) {
+			l.create(repo/*file name from batch file*/);
+		}else if(i==2) {
+//			r.create(/*file name from batch file*/);
+		}else {
+			System.out.println("Select correct choice ;__;");
+		}
 	}
 }
 
