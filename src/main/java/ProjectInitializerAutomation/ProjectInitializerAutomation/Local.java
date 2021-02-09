@@ -54,7 +54,8 @@ public class Local {
 		createBat();
 		
 		try {
-			Runtime.getRuntime().exec("cmd /c start tasks.bat");
+//			Runtime.getRuntime().exec("cmd /c start tasks.bat");
+			Runtime.getRuntime().exec("cmd /c start tasks.bat", null, new File(path));
 			
 		}catch (Exception e) {
 			// TODO: handle exception
@@ -77,9 +78,17 @@ public class Local {
 		    }
 		 try {
 		      FileWriter myWriter = new FileWriter(path+"//"+"tasks.bat");
-		      myWriter.write("git -help");
+		      myWriter.write("git init");
 		      myWriter.write(System.getProperty( "line.separator" ));
-		      myWriter.write("color 02");
+//		      myWriter.write("touch ReadMe.md");
+//		      myWriter.write(System.getProperty( "line.separator" ));
+//		      myWriter.write("timeout 5");
+//		      myWriter.write(System.getProperty( "line.separator" ));
+		      myWriter.write("git add .");
+		      myWriter.write(System.getProperty( "line.separator" ));
+		      myWriter.write("timeout 10");
+		      myWriter.write(System.getProperty( "line.separator" ));
+		      myWriter.write("git commit -m "+(char)34+"1st commit"+(char)34+"");
 		      myWriter.write(System.getProperty( "line.separator" ));
 		      myWriter.close();
 		      System.out.println("Successfully wrote to the file.");
