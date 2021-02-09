@@ -60,7 +60,7 @@ public class Local {
 			// TODO: handle exception
 		}
 		
-//	
+//	may need to delete the tasks.bat file after using it
 
 	}
 	void createBat() {
@@ -76,11 +76,11 @@ public class Local {
 		      e.printStackTrace();
 		    }
 		 try {
-		      FileWriter myWriter = new FileWriter("tasks.bat");
-		      myWriter.write("dir");
-		      System.getProperty( "line.separator" );
+		      FileWriter myWriter = new FileWriter(path+"//"+"tasks.bat");
+		      myWriter.write("git -help");
+		      myWriter.write(System.getProperty( "line.separator" ));
 		      myWriter.write("color 02");
-		      System.getProperty( "line.separator" );
+		      myWriter.write(System.getProperty( "line.separator" ));
 		      myWriter.close();
 		      System.out.println("Successfully wrote to the file.");
 		    } catch (IOException e) {
