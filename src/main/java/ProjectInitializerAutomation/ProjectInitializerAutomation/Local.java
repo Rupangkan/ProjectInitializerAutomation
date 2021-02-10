@@ -1,12 +1,10 @@
 package ProjectInitializerAutomation.ProjectInitializerAutomation;
 
-import java.io.BufferedWriter;
-import java.io.Console;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
+
+//Use Git API ;____;  (jGit)
 
 public class Local {
 	private String path = "D:\\Projects\\";
