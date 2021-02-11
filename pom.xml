@@ -19,6 +19,13 @@
 	</properties>
 
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.webjars.npm/touch -->
+		<dependency>
+			<groupId>org.webjars.npm</groupId>
+			<artifactId>touch</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.buildobjects</groupId>
 			<artifactId>jproc</artifactId>

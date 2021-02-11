@@ -5,12 +5,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 //Use Git API ;____;  (jGit)
+//Use jproc for System commands
 
 public class Local {
-	private String path = "D:\\Projects\\";
+	String path = System.getenv("Pro");
 	void create(String rep) {
 		try {
-
+			System.out.println(path);
 			File file = new File(path);
 			//Creating the directory
 			boolean bool = file.mkdir();

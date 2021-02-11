@@ -1,9 +1,10 @@
 package ProjectInitializerAutomation.ProjectInitializerAutomation;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Driver {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		//Needs to get the file name from String[] args when running the batch file
 		//Needs to set username and email for git 
 		int i;
@@ -19,7 +20,8 @@ public class Driver {
 		if(i==1) {
 			l.create(repo/*file name from batch file*/);
 		}else if(i==2) {
-//			r.create(repo/*file name from batch file*/);
+			l.create(repo/*file name from batch file*/);
+			r.create(repo/*file name from batch file*/);
 		}else {
 			System.out.println("Select correct choice ;__;");
 		}
