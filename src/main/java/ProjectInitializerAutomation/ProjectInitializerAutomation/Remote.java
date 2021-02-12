@@ -4,7 +4,8 @@ import java.io.IOException;
 
 import org.buildobjects.process.ProcBuilder;
 import org.buildobjects.process.ProcResult;
-
+import org.kohsuke.github.GHCreateRepositoryBuilder;
+import org.kohsuke.github.GHRepository;
 import org.kohsuke.github.GitHub;
 import org.kohsuke.github.GitHubBuilder;
 
@@ -24,10 +25,11 @@ public class Remote {
 		GitHub github = new GitHubBuilder().withOAuthToken(Token).build();
 
 		String userName = github.getMyself().getLogin();
-		github.createRepository(repo);
+		github.createRepository(repo).create();
+		
 		
 		ProcResult result = new ProcBuilder("git")
-			    .withArgs("remote", "add" ,"new").withArg("https://github.com/"+userName+"/"+repo+".git")
+			    .withArgs("remote", "set-url" ,"new").withArg("https://github.com/"+userName+"/"+repo+".git")
 			    .run();
 		result = new ProcBuilder("git").withArgs("push","new","main").run();
 		
