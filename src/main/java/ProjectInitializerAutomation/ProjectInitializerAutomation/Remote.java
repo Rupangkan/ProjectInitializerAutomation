@@ -23,11 +23,11 @@ public class Remote {
 		
 		GitHub github = new GitHubBuilder().withOAuthToken(Token).build();
 
-		String userName = github.getMyself().getAvatarUrl();
+		String userName = github.getMyself().getLogin();
 		github.createRepository(repo);
 		
 		ProcResult result = new ProcBuilder("git")
-			    .withArgs("remote", "add" ,"new").withArg(userName+"/"+repo+".git")
+			    .withArgs("remote", "add" ,"new").withArg("https://github.com/"+userName+"/"+repo+".git")
 			    .run();
 		result = new ProcBuilder("git").withArgs("push","new","main").run();
 		

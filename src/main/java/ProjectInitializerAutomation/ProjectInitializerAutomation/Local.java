@@ -15,7 +15,7 @@ public class Local {
 			File file = new File(path);
 			//Creating the directory
 			boolean bool = file.mkdir();
-			path = path+rep;
+			path = path+"//"+rep;
 			if(bool){
 				//make directory name dynamic
 				System.out.println("Projects Directory created successfully");
