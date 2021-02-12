@@ -17,19 +17,19 @@ public class Remote {
 //		Local l = new Local();
 //		l.create(repo);
 		
-		String Token = System.getenv("Tok");
-		String Path = System.getenv("Pro");
+		String Token = System.getenv("TOK");
+		String Path = System.getenv("PRO");
 		String dir = Path + "//"+repo;
 		
 		GitHub github = new GitHubBuilder().withOAuthToken(Token).build();
 
-		String userName = github.getUser(Token).getName();
-		github.createRepository(repo, "","", true);
+		String userName = github.getMyself().getAvatarUrl();
+		github.createRepository(repo);
 		
 		ProcResult result = new ProcBuilder("git")
-			    .withArgs("remote", "add" ,"origin").withArg("https://github.com/"+userName+"/"+repo+".git")
+			    .withArgs("remote", "add" ,"new").withArg(userName+"/"+repo+".git")
 			    .run();
-		result = new ProcBuilder("git").withArgs("push","origin","main").run();
+		result = new ProcBuilder("git").withArgs("push","new","main").run();
 		
 
 		

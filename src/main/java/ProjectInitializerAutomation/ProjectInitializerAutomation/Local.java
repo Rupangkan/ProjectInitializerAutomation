@@ -8,7 +8,7 @@ import java.io.IOException;
 //Use jproc for System commands
 
 public class Local {
-	String path = System.getenv("Pro");
+	String path = System.getenv("PRO");
 	void create(String rep) {
 		try {
 			System.out.println(path);
