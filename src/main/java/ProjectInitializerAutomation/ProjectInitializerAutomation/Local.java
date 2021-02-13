@@ -59,7 +59,7 @@ public class Local {
 	private void command() {
 
 		try {
-			Runtime.getRuntime().exec("cmd /c start ");
+			Runtime.getRuntime().exec("cmd /c start ", null, new File(path));
 
 
 		}catch (Exception e) {
