@@ -9,6 +9,7 @@ import org.buildobjects.process.ProcResult;
 
 //Use Git API ;____;  (jGit)
 //Use jproc for System commands
+//touch not working
 
 public class Local {
 	String path = System.getenv("PRO");
@@ -58,22 +59,23 @@ public class Local {
 	}
 	private void command() {
 
-		try {
-			Runtime.getRuntime().exec("cmd /c start ", null, new File(dir));
-
-
-		}catch (Exception e) {
-			// TODO: handle exception
-		}
+//		try {
+//			Runtime.getRuntime().exec("cmd /c start", null, new File(dir));
+//
+//
+//		}catch (Exception e) {
+//			// TODO: handle exception
+//		}
 //		ProcResult result = new ProcBuilder("cd")
 //				.withArg(""+path.substring(0,2)+"")
 //				.run();
-//
+////
 //		result = new ProcBuilder("cd")
 //				.withArg(""+(char)34+""+path+"\\"+repos+""+(char)34+"")
 //				.run();
 		ProcResult result = new ProcBuilder("git")
 				.withArg("init")
+				.withWorkingDirectory(new File(dir))
 				.run();
 //		result = new ProcBuilder("touch")
 //				.withArg("ReadMe.md")
