@@ -84,14 +84,10 @@ public class Local {
 
 		result = new ProcBuilder("git")
 				.withArgs("add",".")
-				.withWorkingDirectory(new File(dir))
 				.run();
 		result = new ProcBuilder("git")
-				.withArgs("commit","-a","--allow-empty-message","-m").withArg("''")
-				.withWorkingDirectory(new File(dir))
+				.withArgs("commit","-m").withArg("1st commit")
 				.run();
-		
-//git commit -a --allow-empty-message -m ''
 		System.out.println("Successfully commited");
 		//		createBat();
 		//		
