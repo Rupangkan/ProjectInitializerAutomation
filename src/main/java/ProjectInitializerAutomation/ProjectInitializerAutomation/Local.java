@@ -86,7 +86,7 @@ public class Local {
 				.withArgs("add",".")
 				.run();
 		result = new ProcBuilder("git")
-				.withArgs("commit","-m").withArg(""+(char)34+"1st commit"+(char)34+"")
+				.withArgs("commit","-m").withArg("1st commit")
 				.run();
 		System.out.println("Successfully commited");
 		//		createBat();
