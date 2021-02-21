@@ -81,6 +81,9 @@ public class Local {
 //				.withArg("ReadMe.md")
 //				.run();
 //		System.out.println("ReadMe.md created");
+		result = new ProcBuilder("fsutil")
+				.withArgs("file","createnew","Readme.txt","1000")
+				.run();
 
 		result = new ProcBuilder("git")
 				.withArgs("add",".")
