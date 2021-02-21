@@ -83,6 +83,7 @@ public class Local {
 //		System.out.println("ReadMe.md created");
 		result = new ProcBuilder("fsutil")
 				.withArgs("file","createnew","Readme.txt","1000")
+				.withWorkingDirectory(new File(dir))
 				.run();
 
 		result = new ProcBuilder("git")
