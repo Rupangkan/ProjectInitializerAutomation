@@ -87,8 +87,16 @@ public class Local {
 				.run();
 		result = new ProcBuilder("git")
 				.withArgs("commit","-m").withArg("1st commit")
+				.withExpectedExitStatuses(0,1)
 				.run();
-		System.out.println("Successfully commited");
+		
+		System.out.println(result.getOutputString());
+		//now bail
+		if (result.getExitValue()!=0)
+			throw new RuntimeException("Failed to run git");
+		
+		
+		//System.out.println("Successfully commited");
 		//		createBat();
 		//		
 		//		try {
