@@ -88,9 +88,11 @@ public class Local {
 
 		result = new ProcBuilder("git")
 				.withArgs("add",".")
+				.withWorkingDirectory(new File(dir))
 				.run();
 		result = new ProcBuilder("git")
 				.withArgs("commit","-m").withArg("1st commit")
+				.withWorkingDirectory(new File(dir))
 				.withExpectedExitStatuses(0,1)
 				.run();
 		
