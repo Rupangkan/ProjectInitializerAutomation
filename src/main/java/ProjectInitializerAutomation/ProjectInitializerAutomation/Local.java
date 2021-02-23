@@ -59,20 +59,6 @@ public class Local {
 	}
 	private void command() {
 
-//		try {
-//			Runtime.getRuntime().exec("cmd /c start", null, new File(dir));
-//
-//
-//		}catch (Exception e) {
-//			// TODO: handle exception
-//		}
-//		ProcResult result = new ProcBuilder("cd")
-//				.withArg(""+path.substring(0,2)+"")
-//				.run();
-////
-//		result = new ProcBuilder("cd")
-//				.withArg(""+(char)34+""+path+"\\"+repos+""+(char)34+"")
-//				.run();
 		ProcResult result = new ProcBuilder("git")
 				.withArg("init")
 				.withWorkingDirectory(new File(dir))
@@ -101,60 +87,9 @@ public class Local {
 		if (result.getExitValue()!=0)
 			throw new RuntimeException("Failed to run git");
 		
-		
-		//System.out.println("Successfully commited");
-		//		createBat();
-		//		
-		//		try {
-		////			Runtime.getRuntime().exec("cmd /c start tasks.bat");
-		//			Runtime.getRuntime().exec("cmd /c start tasks.bat", null, new File(path));
-		//			
-		//		}catch (Exception e) {
-		//			// TODO: handle exception
-		//		}
 
-		//	may need to delete the tasks.bat file after using it
 
 	}
-	//	void createBat() {
-	//		
-	//		
-	//		
-	//		
-	//		
-	//		
-	////		 try {
-	////		      File myObj = new File("tasks.bat");
-	////		      if (myObj.createNewFile()) {
-	////		        System.out.println("File created: " + myObj.getName());
-	////		      } else {
-	////		        System.out.println("File already exists.");
-	////		      }
-	////		    } catch (IOException e) {
-	////		      System.out.println("An error occurred.");
-	////		      e.printStackTrace();
-	////		    }
-	////		 try {
-	////		      FileWriter myWriter = new FileWriter(path+"//"+"tasks.bat");
-	////		      myWriter.write("git init");
-	////		      myWriter.write(System.getProperty( "line.separator" ));
-	//////		      myWriter.write("touch ReadMe.md");
-	//////		      myWriter.write(System.getProperty( "line.separator" ));
-	//////		      myWriter.write("timeout 5");
-	//////		      myWriter.write(System.getProperty( "line.separator" ));
-	////		      myWriter.write("git add .");
-	////		      myWriter.write(System.getProperty( "line.separator" ));
-	////		      myWriter.write("timeout 10");
-	////		      myWriter.write(System.getProperty( "line.separator" ));
-	////		      myWriter.write("git commit -m "+(char)34+"1st commit"+(char)34+"");
-	////		      myWriter.write(System.getProperty( "line.separator" ));
-	////		      myWriter.close();
-	////		      System.out.println("Successfully wrote to the file.");
-	////		    } catch (IOException e) {
-	////		      System.out.println("An error occurred.");
-	////		      e.printStackTrace();
-	////		    }
-	//	}
 
 
 }
